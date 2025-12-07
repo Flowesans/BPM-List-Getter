@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://j1y7iibrkypq"]
+
+[ext_resource type="Script" uid="uid://bungilnjwtgpj" path="res://control.gd" id="1_0fbet"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+oversampling_override = 1.0
+title = "Open a File"
+visible = true
+file_mode = 0
+access = 2
+use_native_dialog = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 247.0
+offset_bottom = 31.0
+
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]
